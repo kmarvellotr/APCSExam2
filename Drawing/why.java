@@ -10,9 +10,13 @@ import java.applet.*;
 
 public class why extends Applet
 {	
+	boolean checkDims(int x, int width) 
+	{
+	    if(width<4 && x+width<1000)
+	    return true;
+	}
 	
-	
-	public void drawSquare(Graphics g, int x, int y, int length, int width)
+	public void paint(Graphics g)
 	{
 		 boolean ok = checkDims(x, width);
 		    if(!ok) return;
@@ -27,12 +31,7 @@ public class why extends Applet
 		drawSquare(g, newX, newY, newWidth, newLength);
 	}
 	
-	boolean checkDims(int x, int width) 
-	{
-	    if(width<4 && x+width<1000)
-	    return true;
-		return false; 
-	}
+	
 }
 
 
